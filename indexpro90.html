@@ -1,0 +1,111 @@
+<!doctype html>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Sticky NavBar</title>
+		<style>
+			body{
+				margin: 0px;
+			}
+
+			#header{
+				text-align: center;
+			}
+			#logo{
+				width: 250px;
+				height: auto;
+			}
+			#menu-bar{
+				text-align: center;
+				background-color: cadetblue;
+			}
+			#menu-bar li{
+				display: inline-block;
+				padding: 15px 10px;
+				color: white;
+				font-size: 18px;
+				font-weight: bold;
+			}
+			#container{
+				text-align: center;
+				padding: 50px 100px;
+			}
+			#about-img{
+				width: 100%;
+			}
+			.sticky{
+				position: fixed;
+				top: 0%;
+				width: 100%;
+			}
+			a{
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<img src="/home/ftt/Desktop/AbhaHtml/javascript/logo.webp" id="logo" alt="">
+		</div>
+		<nav id="menu-bar">
+			<ul>
+				<li><a id="Home" onmousedown="fun1()" href="/home/ftt/Desktop/AbhaHtml/javascript/home.html" style="color:black;">Home</a></li>
+				<li><a id="About Us" onmousedown="fun2()" href="/home/ftt/Desktop/AbhaHtml/javascript/about us.html" style="color:black;">About Us</a></li>
+				<li><a id="client" onmousedown="fun3()" href="/home/ftt/Desktop/AbhaHtml/javascript/client.html" style="color:black;">Client</a></li>
+				<li><a id="Contact Us" onmousedown="fun4()" href="/home/ftt/Desktop/AbhaHtml/javascript/contactus.html" style="color:black">Contact Us</a></li>
+			</ul>
+		</nav>
+		<div id="container">
+			<h1>About Us</h1>
+			<img src="/home/ftt/Desktop/AbhaHtml/javascript/aboutus1.jpg" id="about-img">
+			<p style="text-align: justify;">hen you land on a sample web page or open an email template and see content beginning with "lorem ipsum," the page creator placed that apparent gibberish there on purpose. Page layouts look better with something in each section. Web page designers, content writers, and layout artists use lorem ipsum, also known as placeholder copy, to distinguish which areas on a page will hold advertisements, editorials, and filler before the final written content and website designs receive client approval. Fun Lorem Ipsum text may appear in any size and font to simulate everything you create for your campaigns.<br>
+
+			What is lorem ipsum, and when did publishers begin using it?
+			Past lorem ipsum served the same purpose for written content as stock photos do now. The original lorem ipsum used a section of a book called "De Finibus Bonorum et Dolorem," written by the Ancient Roman author Cicero. Old-style printing presses required tedious hand-setting of each letter and punctuation mark. So instead, workers would create type specimen books using preset words and paragraphs from Cicero's treatise to save time.<br><br>
+
+			What is lorem ipsum, and when did publishers begin using it?
+			Past lorem ipsum served the same purpose for written content as stock photos do now. The original lorem ipsum used a section of a book called "De Finibus Bonorum et Dolorem," written by the Ancient Roman author Cicero. Old-style printing presses required tedious hand-setting of each letter and punctuation mark. So instead, workers would create type specimen books using preset words and paragraphs from Cicero's treatise to save time.
+				<br><br>
+			What is lorem ipsum, and when did publishers begin using it?
+			Past lorem ipsum served the same purpose for written content as stock photos do now. The original lorem ipsum used a section of a book called "De Finibus Bonorum et Dolorem," written by the Ancient Roman author Cicero. Old-style printing presses required tedious hand-setting of each letter and punctuation mark. So instead, workers would create type specimen books using preset words and paragraphs from Cicero's treatise to save time.
+			</p>
+		</div>
+		<script>
+			function fun1(){
+				document.getElementById("Home").innerHTML="Home";
+			}
+			function fun2(){
+				document.getElementById("About Us").innerHTML="About Us";
+			}
+			function fun3(){
+				document.getElementById("Client").innerHTML ="Client";
+			}
+			function fun4(){
+				document.getElementById("Contact Us").innerHTML ="Contact Us";
+			} 
+		</script>
+		<script>
+			window.addEventListener('wheel',function(event){
+				if (event.deltaY<0) {
+					console.log("scroll up");
+				}else{
+					console.log("scroll down")
+				}
+			});
+		</script>
+		<script>
+			window.addEventListener('scroll',function(){
+
+				let navbar = document.getElementById("menu-bar");
+
+				if(window.pageYOffset >=187.625){
+					navbar.classList.add('sticky');
+				}else{
+					navbar.classList.remove('sticky');
+				}
+			});
+		</script>
+	</body>
+	</html>
